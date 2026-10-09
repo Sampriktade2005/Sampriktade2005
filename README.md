@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e1b4b,30:312e81,70:4338ca,100:0284c7&height=220&section=header&text=Samprikta%20De&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=B.Tech%20CSE%20(Data%20Science)%20%7C%20Data%20Analytics%20%7C%20ML%20%26%20GenAI%20Builder&descColor=bae6fd&descAlignY=62&animation=twinkling" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&duration=3200&pause=900&color=38BDF8&center=true&vCenter=true&width=750&lines=%E2%9C%A8+B.Tech+CSE+(Data+Science)+%40+Brainware+University;%F0%9F%93%8A+Data+Analytics+Intern+%40+Techno+Exponent;%F0%9F%A4%96+Exploring+Generative+AI%2C+LLMs+%26+LangChain;%F0%9F%92%A1+Transforming+raw+data+into+actionable+insights;%F0%9F%8C%BA+Building+smart+ML+models+%26+data-driven+solutions)](https://git.io/typing-svg)
 
@@ -10,9 +9,9 @@
 
 <div align="center">
 
-### 🌸 *"                   SAMPRIKTA DE
+### 🌸                      SAMPRIKTA DE
 
-Passionate about transforming complex data into meaningful insights and building data-driven AI solutions."*
+*"Passionate about transforming complex data into meaningful insights and building data-driven AI solutions."*
 
 </div>
 
