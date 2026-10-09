@@ -26,10 +26,10 @@
 🎓 **Education**
 > **B.Tech in Computer Science and Engineering (Data Science)**  
 > Brainware University · 2023 – 2027  
-> *3rd Year Undergraduate Student*
+> *4th Year Undergraduate Student*
 
 📍 **Location**
-> Kolkata, West Bengal, India 🇮🇳
+> Kolkata, West Bengal, India
 
 </td>
 <td width="50%">
@@ -40,7 +40,7 @@
 > Python Development · LLM Apps
 
 💼 **Seeking**
-> Data Analytics / Data Science / ML Internships
+> Data Analytics / Data Science / ML Enginner 
 
 </td>
 </tr>
@@ -55,7 +55,7 @@
 - Derived actionable business insights and optimized data-driven decision-making workflows.
 - Developed dynamic data visualizations using Python (`Matplotlib`, `Seaborn`) and analytics tools.
 
-**🤖 Generative AI & LLM Training — Ardent Computech Private Limited**
+**🤖 Generative AI & LLM Training — Ardent Computech Private Limited** *(Kolkata, India)*
 - Gained hands-on experience in **Generative AI**, **Large Language Models (LLMs)**, and prompt engineering.
 - Explored framework pipelines using **LangChain**, **Hugging Face**, and **Vector Databases**.
 - Built AI workflows and explored Retrieval-Augmented Generation (RAG) architectures.
@@ -67,7 +67,7 @@
 ### 🐍 Languages & Core Tools
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Java](https://img.shields.io/badge/Java-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ### 📊 Data Science & Machine Learning
