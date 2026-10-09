@@ -112,11 +112,43 @@
 
 ---
 
-### 🌐 [Web Application Portfolio](https://github.com/Sampriktade2005/PROJECT)
-> *Personal Web & Project Showcase Repository*
-- Modular front-end web project created to showcase analytical projects and web applications.
-- Features clean HTML5 structure, responsive layout styling, and intuitive site navigation.
-- `HTML5` · `CSS3` · `JavaScript` · `GitHub Pages`
+### 📊 E-Commerce Sales Analytics Dashboard
+
+> Interactive dashboard for analyzing online retail sales data.
+
+- Cleaned and prepared sales data
+- Performed exploratory data analysis
+- Built interactive visualizations and dashboards
+- Analyzed sales trends and business performance
+
+`Python` · `Pandas` · `Power BI` · `Excel` · `Data Visualization`
+
+---
+
+### 🤖 AI Resume Screening System
+
+> AI-powered application for analyzing and screening resumes.
+
+- Extract relevant information from resumes
+- Identify skills and candidate attributes
+- Match resumes with job requirements
+- Generate candidate suitability insights
+
+`Python` · `Machine Learning` · `NLP` · `Generative AI`
+
+---
+
+### 🐋 ORCA: Marine EcOsystem Reasoning with Collaborative Agents
+*Smart India Hackathon 2026 · SIH26176 (ISRO) · Team ASTID (6 members)*
+
+> Conversational multi-agent AI platform that answers marine and fishing-safety questions in natural language.
+
+- Built the multi-agent workflow in **LangGraph**, with Planner, Weather, Ocean and Risk/Geofence agents
+- Added language detection so answers come back in the user's own language
+- Combines satellite and ocean data (**MOSDAC**, **INCOIS**) into evidence-backed advisories
+- Worked in a 6-member team using GitHub pull requests and code review
+
+`Python` · `LangGraph` · `FastAPI` · `Supabase` · `Next.js` · `Multi-Agent AI`
 
 ---
 
