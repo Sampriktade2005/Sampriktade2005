@@ -10,7 +10,9 @@
 
 <div align="center">
 
-### 🌸 *"Passionate about transforming complex data into meaningful insights and building data-driven AI solutions."*
+### 🌸 *"                   SAMPRIKTA DE
+
+Passionate about transforming complex data into meaningful insights and building data-driven AI solutions."*
 
 </div>
 
