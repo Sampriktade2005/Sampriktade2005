@@ -112,23 +112,19 @@
 
 ---
 
-### 📊 E-Commerce Sales Analytics Dashboard
+### 🩺[ SugarSense AI — Diabetes Prediction](https://github.com/Sampriktade2005)
+> Machine learning based diabetes prediction system.
+- Performed data preprocessing and exploratory data analysis
+- Built a machine learning classification model
+- Evaluated model performance using appropriate classification metrics
 
-> Interactive dashboard for analyzing online retail sales data.
-
-- Cleaned and prepared sales data
-- Performed exploratory data analysis
-- Built interactive visualizations and dashboards
-- Analyzed sales trends and business performance
-
-`Python` · `Pandas` · `Power BI` · `Excel` · `Data Visualization`
+`Python` · `Pandas` · `NumPy` · `Scikit-learn` · `Machine Learning`
 
 ---
 
-### 🤖 AI Resume Screening System
+### 🤖 [AI Resume Screening System](https://github.com/Sampriktade2005)
 
 > AI-powered application for analyzing and screening resumes.
-
 - Extract relevant information from resumes
 - Identify skills and candidate attributes
 - Match resumes with job requirements
@@ -138,11 +134,10 @@
 
 ---
 
-### 🐋 ORCA: Marine EcOsystem Reasoning with Collaborative Agents
+### 🐋 [ORCA: Marine EcOsystem Reasoning with Collaborative Agents](https://github.com/Sampriktade2005)
 *Smart India Hackathon 2026 · SIH26176 (ISRO) · Team ASTID (6 members)*
 
-> Conversational multi-agent AI platform that answers marine and fishing-safety questions in natural language.
-
+> Conversational multi-agent AI platform that answers marine and fishing-safety questions in natural language.+
 - Built the multi-agent workflow in **LangGraph**, with Planner, Weather, Ocean and Risk/Geofence agents
 - Added language detection so answers come back in the user's own language
 - Combines satellite and ocean data (**MOSDAC**, **INCOIS**) into evidence-backed advisories
