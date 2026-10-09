@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samprikta De | GitHub Profile README Previewer & Customizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-border: #30363d;
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.25);
+            --accent: #818cf8;
+            --accent-purple: #c084fc;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        /* Header Navigation Bar */
+        .navbar {
+            background: rgba(22, 27, 34, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--bg-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            background: #090d11;
+            padding: 4px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--bg-border);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 18px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+        }
+
+        .tab-btn.active {
+            background: var(--bg-card);
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            font-weight: 600;
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 9px 18px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent));
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(129, 140, 248, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(129, 140, 248, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--bg-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-border);
+            color: #fff;
+        }
+
+        /* Main Container Layout */
+        .container {
+            max-width: 1080px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+
+        /* Banner Welcome Header */
+        .welcome-card {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.6), rgba(15, 23, 42, 0.8));
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .welcome-info h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ffffff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .welcome-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 650px;
+        }
+
+        .status-badge {
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--primary);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-pulse {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Tab Content Sections */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* GitHub Profile Wrapper */
+        .github-profile-box {
+            background: var(--bg-card);
+            border: 1px solid var(--bg-border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Rendered GitHub Markdown Styles */
+        .markdown-body {
+            color: var(--text-main);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+            border-bottom: 1px solid var(--bg-border);
+            padding-bottom: 8px;
+            margin-top: 28px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .markdown-body h2 { font-size: 1.4rem; }
+        .markdown-body h3 { font-size: 1.15rem; border: none; }
+
+        .markdown-body hr {
+            border: 0;
+            height: 1px;
+            background: var(--bg-border);
+            margin: 24px 0;
+        }
+
+        .markdown-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            background: #0f141c;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--bg-border);
+        }
+
+        .markdown-body td {
+            padding: 16px 20px;
+            border: 1px solid var(--bg-border);
+            vertical-align: top;
+        }
+
+        .markdown-body blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 8px 16px;
+            margin: 12px 0;
+            background: rgba(129, 140, 248, 0.06);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            color: #d1d5db;
+        }
+
+        .markdown-body img {
+            max-width: 100%;
+            border-radius: 6px;
+        }
+
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 20px 0;
+        }
+
+        /* Code Viewer Box */
+        .code-container {
+            position: relative;
+            background: #090d11;
+            border: 1px solid var(--bg-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .code-header {
+            background: #161b22;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--bg-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        pre {
+            padding: 20px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #e6edf3;
+            max-height: 600px;
+        }
+
+        /* Step by Step Guide Card */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--bg-border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary);
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .cmd-box {
+            background: #090d11;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            color: var(--primary);
+            border: 1px solid var(--bg-border);
+            word-break: break-all;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: #10b981;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 9999;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Header -->
+    <nav class="navbar">
+        <a href="#" class="brand">
+            <div class="brand-icon"><i class="fa-brands fa-github"></i></div>
+            <span>Samprikta De Profile Suite</span>
+        </a>
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('preview')"><i class="fa-solid fa-eye"></i> Visual Preview</button>
+            <button class="tab-btn" onclick="switchTab('code')"><i class="fa-solid fa-code"></i> Raw Markdown</button>
+            <button class="tab-btn" onclick="switchTab('guide')"><i class="fa-solid fa-rocket"></i> Publishing Guide</button>
+        </div>
+        <div class="action-btns">
+            <button class="btn btn-primary" onclick="copyMarkdown()"><i class="fa-regular fa-copy"></i> Copy Markdown</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Welcome Hero Banner -->
+        <div class="welcome-card">
+            <div class="welcome-info">
+                <h1>GitHub Profile README Redesign</h1>
+                <p>Designed for <strong>Samprikta De</strong> (`Sampriktade2005`). Inspired by modern Data Science aesthetics with animated banners, technology badges, project highlights, and live stats widgets.</p>
+            </div>
+            <div class="status-badge">
+                <span class="status-pulse"></span> Ready to Publish
+            </div>
+        </div>
+
+        <!-- TAB 1: VISUAL PREVIEW -->
+        <div id="preview" class="tab-content active">
+            <div class="github-profile-box markdown-body">
+                
+                <!-- Animated Header Banner -->
+                <div align="center">
+                    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e1b4b,30:312e81,70:4338ca,100:0284c7&height=220&section=header&text=Samprikta%20De&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=B.Tech%20CSE%20(Data%20Science)%20%7C%20Data%20Analytics%20%7C%20ML%20%26%20GenAI%20Builder&descColor=bae6fd&descAlignY=62&animation=twinkling" alt="Header Banner" />
+                    
+                    <br/><br/>
+                    
+                    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&duration=3200&pause=900&color=38BDF8&center=true&vCenter=true&width=750&lines=%E2%9C%A8+B.Tech+CSE+(Data+Science)+%40+Brainware+University;%F0%9F%93%8A+Data+Analytics+Intern+%40+Techno+Exponent;%F0%9F%A4%96+Exploring+Generative+AI%2C+LLMs+%26+LangChain;%F0%9F%92%A1+Transforming+raw+data+into+actionable+insights;%F0%9F%8C%BA+Building+smart+ML+models+%26+data-driven+solutions" alt="Typing Subtitle" />
+                </div>
+
+                <hr/>
+
+                <div align="center">
+                    <h3 style="border:none;">🌸 <em>"Passionate about transforming complex data into meaningful insights and building data-driven AI solutions."</em></h3>
+                </div>
+
+                <hr/>
+
+                <!-- About Me Table -->
+                <h2>🌺 About Me</h2>
+                <table>
+                    <tr>
+                        <td width="50%">
+                            🎓 <strong>Education</strong>
+                            <blockquote>
+                                <strong>B.Tech in Computer Science and Engineering (Data Science)</strong><br>
+                                Brainware University · 2023 – 2027<br>
+                                <em>3rd Year Undergraduate Student</em>
+                            </blockquote>
+                            📍 <strong>Location</strong>
+                            <blockquote>Kolkata, West Bengal, India 🇮🇳</blockquote>
+                        </td>
+                        <td width="50%">
+                            🎯 <strong>Focus Areas</strong>
+                            <blockquote>
+                                Data Analytics · Machine Learning<br>
+                                Generative AI · Data Visualization<br>
+                                Python Development · LLM Apps
+                            </blockquote>
+                            💼 <strong>Seeking</strong>
+                            <blockquote>Data Analytics / Data Science / ML Internships</blockquote>
+                        </td>
+                    </tr>
+                </table>
+
+                <hr/>
+
+                <!-- Experience -->
+                <h2>💼 Experience & Industrial Training</h2>
+                <p><strong>📊 Data Analytics Intern — Techno Exponent</strong> <em>(Kolkata, India)</em></p>
+                <ul>
+                    <li>Performed data cleaning, data preprocessing, and exploratory data analysis (EDA) on complex datasets.</li>
+                    <li>Derived actionable business insights and optimized data-driven decision-making workflows.</li>
+                    <li>Developed dynamic data visualizations using Python (<code>Matplotlib</code>, <code>Seaborn</code>) and analytics tools.</li>
+                </ul>
+
+                <br>
+                <p><strong>🤖 Generative AI & LLM Training — Ardent Computech Private Limited</strong></p>
+                <ul>
+                    <li>Gained hands-on experience in <strong>Generative AI</strong>, <strong>Large Language Models (LLMs)</strong>, and prompt engineering.</li>
+                    <li>Explored framework pipelines using <strong>LangChain</strong>, <strong>Hugging Face</strong>, and <strong>Vector Databases</strong>.</li>
+                    <li>Built AI workflows and explored Retrieval-Augmented Generation (RAG) architectures.</li>
+                </ul>
+
+                <hr/>
+
+                <!-- Skills -->
+                <h2>🛠️ Technical Skills & Tools</h2>
+
+                <h3>🐍 Languages & Core Tools</h3>
+                <div class="badge-group">
+                    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+                    <img src="https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+                    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+                    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+                </div>
+
+                <h3>📊 Data Science & Machine Learning</h3>
+                <div class="badge-group">
+                    <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+                    <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
+                    <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+                    <img src="https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white" />
+                    <img src="https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+                </div>
+
+                <h3>🤖 Generative AI & LLMs</h3>
+                <div class="badge-group">
+                    <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
+                    <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" />
+                    <img src="https://img.shields.io/badge/Vector%20DBs-4A154B?style=for-the-badge&logo=database&logoColor=white" />
+                </div>
+
+                <h3>📈 Business Intelligence & Development Tools</h3>
+                <div class="badge-group">
+                    <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" />
+                    <img src="https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" />
+                    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+                    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+                    <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
+                    <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" />
+                </div>
+
+                <hr/>
+
+                <!-- Featured Projects -->
+                <h2>🚀 Featured Projects</h2>
+
+                <h3>⚙️ <a href="https://github.com/Sampriktade2005" target="_blank" style="color:var(--primary);">Motor Fault Detection using Machine Learning</a></h3>
+                <blockquote><em>Predictive Maintenance & Fault Detection System for Industrial Motors</em></blockquote>
+                <ul>
+                    <li>Conducted data preprocessing, feature engineering, and exploratory data analysis on motor operating parameters (temperature, speed, acceleration/vibration).</li>
+                    <li>Implemented ML classification models including <strong>Logistic Regression</strong> and <strong>K-Nearest Neighbors (KNN)</strong> to accurately predict motor faults.</li>
+                    <li>Evaluated model accuracy, Precision, Recall, and Confusion Matrices to ensure reliable industrial anomaly detection.</li>
+                </ul>
+                <p><code>Python</code> · <code>Scikit-learn</code> · <code>Pandas</code> · <code>Matplotlib</code> · <code>Seaborn</code></p>
+
+                <hr style="border-style: dashed; margin:16px 0;"/>
+
+                <h3>📊 <a href="https://github.com/Sampriktade2005" target="_blank" style="color:var(--primary);">E-Commerce Sales Analytics Dashboard</a></h3>
+                <blockquote><em>Business Intelligence & Data Analytics Dashboard for Sales Performance</em></blockquote>
+                <ul>
+                    <li>Cleaned, structured, and analyzed multi-category e-commerce transaction data to evaluate revenue trends and customer buying behavior.</li>
+                    <li>Built key performance indicators (KPIs) and interactive charts for monthly sales growth, product profitability, and regional distribution.</li>
+                    <li>Extracted actionable insights to guide inventory planning, customer retention, and targeted marketing strategies.</li>
+                </ul>
+                <p><code>Python</code> · <code>Pandas</code> · <code>Power BI</code> · <code>Excel</code> · <code>Data Visualization</code></p>
+
+                <hr style="border-style: dashed; margin:16px 0;"/>
+
+                <h3>🌐 <a href="https://github.com/Sampriktade2005/PROJECT" target="_blank" style="color:var(--primary);">Web Application Portfolio</a></h3>
+                <blockquote><em>Personal Web & Project Showcase Repository</em></blockquote>
+                <ul>
+                    <li>Modular front-end web project created to showcase analytical projects and web applications.</li>
+                    <li>Features clean HTML5 structure, responsive layout styling, and intuitive site navigation.</li>
+                </ul>
+                <p><code>HTML5</code> · <code>CSS3</code> · <code>JavaScript</code> · <code>GitHub Pages</code></p>
+
+                <hr/>
+
+                <!-- Learning -->
+                <h2>📚 Currently Learning & Exploring</h2>
+                <ul>
+                    <li>🤖 <strong>Generative AI & LLMs</strong>: RAG architectures, prompt engineering, and agentic workflows using <strong>LangChain</strong> & <strong>Hugging Face</strong>.</li>
+                    <li>📦 <strong>Vector Databases</strong>: Semantic indexing, vector search, and embedding stores (ChromaDB, Pinecone).</li>
+                    <li>📈 <strong>Advanced Data Analytics</strong>: Creating executive dashboards, storytelling with data, and automated pipeline workflows.</li>
+                </ul>
+
+                <hr/>
+
+                <!-- Stats Widgets -->
+                <h2>📊 GitHub Statistics & Languages</h2>
+                <div align="center">
+                    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Sampriktade2005&show_icons=true&theme=midnight-purpur&include_all_commits=true&count_private=true&hide_border=true" />
+                    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sampriktade2005&layout=compact&theme=midnight-purpur&hide_border=true&langs_count=6" />
+                    <br/><br/>
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sampriktade2005&theme=midnight-purpur&hide_border=true" />
+                </div>
+
+                <hr/>
+
+                <!-- Social Links -->
+                <h2>🤝 Connect & Collaborate</h2>
+                <div align="center">
+                    <a href="https://linkedin.com/in/samprikta-de" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+                    <a href="https://github.com/Sampriktade2005" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+                    <a href="mailto:samprikta.de@example.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+                    <br/><br/>
+                    <p>⭐️ <em>Thank you for visiting my GitHub Profile! Feel free to explore my repositories and reach out for collaborations.</em></p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB 2: RAW MARKDOWN -->
+        <div id="code" class="tab-content">
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-title"><i class="fa-regular fa-file-code"></i> README.md (Sampriktade2005)</span>
+                    <button class="btn btn-secondary" onclick="copyMarkdown()"><i class="fa-regular fa-copy"></i> Copy Code</button>
+                </div>
+                <pre id="markdownCode"></pre>
+            </div>
+        </div>
+
+        <!-- TAB 3: PUBLISHING GUIDE -->
+        <div id="guide" class="tab-content">
+            <h2 style="font-size: 1.5rem; margin-bottom: 8px;">How to Publish to Your Profile</h2>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">Follow these easy steps to upload your new README.md directly to your special GitHub repository.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Open Profile Repository</h3>
+                    <p>Go to your special GitHub repository at <strong>https://github.com/Sampriktade2005/Sampriktade2005</strong> on your web browser.</p>
+                    <div class="cmd-box">https://github.com/Sampriktade2005/Sampriktade2005</div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Edit or Create README.md</h3>
+                    <p>Click on the pencil icon ✏️ to edit the existing <code>README.md</code>, or click <strong>Add file -> Create new file</strong> and name it <code>README.md</code>.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Paste Content & Save</h3>
+                    <p>Click <strong>Copy Markdown</strong> at the top right of this preview, paste it into GitHub's editor, and click <strong>Commit Changes</strong>.</p>
+                    <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="copyMarkdown()"><i class="fa-regular fa-copy"></i> Copy Markdown Now</button>
+                </div>
+            </div>
+
+            <div style="margin-top: 36px; background: var(--bg-card); border: 1px solid var(--bg-border); border-radius: var(--radius-lg); padding: 24px;">
+                <h3 style="color: var(--primary); margin-bottom: 12px;"><i class="fa-solid fa-terminal"></i> Alternative: Using Git Terminal Commands</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">If you prefer pushing via Git from your local computer terminal:</p>
+                <div class="cmd-box" style="line-height: 1.8;">
+                    git clone https://github.com/Sampriktade2005/Sampriktade2005.git<br>
+                    cd Sampriktade2005<br>
+                    # (Replace README.md with the generated file)<br>
+                    git add README.md<br>
+                    git commit -m "feat: redesign profile README with modern data science theme"<br>
+                    git push origin main
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="toast" class="toast"><i class="fa-solid fa-circle-check"></i> Markdown copied to clipboard!</div>
+
+    <script>
+        const rawMarkdown = `<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e1b4b,30:312e81,70:4338ca,100:0284c7&height=220&section=header&text=Samprikta%20De&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=B.Tech%20CSE%20(Data%20Science)%20%7C%20Data%20Analytics%20%7C%20ML%20%26%20GenAI%20Builder&descColor=bae6fd&descAlignY=62&animation=twinkling" />
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&duration=3200&pause=900&color=38BDF8&center=true&vCenter=true&width=750&lines=%E2%9C%A8+B.Tech+CSE+(Data+Science)+%40+Brainware+University;%F0%9F%93%8A+Data+Analytics+Intern+%40+Techno+Exponent;%F0%9F%A4%96+Exploring+Generative+AI%2C+LLMs+%26+LangChain;%F0%9F%92%A1+Transforming+raw+data+into+actionable+insights;%F0%9F%8C%BA+Building+smart+ML+models+%26+data-driven+solutions)](https://git.io/typing-svg)
+
+</div>
+
+---
+
+<div align="center">
+
+### 🌸 *"Passionate about transforming complex data into meaningful insights and building data-driven AI solutions."*
+
+</div>
+
+---
+
+## 🌺 About Me
+
+<table>
+<tr>
+<td width="50%">
+
+🎓 **Education**
+> **B.Tech in Computer Science and Engineering (Data Science)**  
+> Brainware University · 2023 – 2027  
+> *3rd Year Undergraduate Student*
+
+📍 **Location**
+> Kolkata, West Bengal, India 🇮🇳
+
+</td>
+<td width="50%">
+
+🎯 **Focus Areas**
+> Data Analytics · Machine Learning  
+> Generative AI · Data Visualization  
+> Python Development · LLM Apps
+
+💼 **Seeking**
+> Data Analytics / Data Science / ML Internships
+
+</td>
+</tr>
+</table>
+
+---
+
+## 💼 Experience & Industrial Training
+
+**📊 Data Analytics Intern — Techno Exponent** *(Kolkata, India)*
+- Performed data cleaning, data preprocessing, and exploratory data analysis (EDA) on complex datasets.
+- Derived actionable business insights and optimized data-driven decision-making workflows.
+- Developed dynamic data visualizations using Python (\`Matplotlib\`, \`Seaborn\`) and analytics tools.
+
+**🤖 Generative AI & LLM Training — Ardent Computech Private Limited**
+- Gained hands-on experience in **Generative AI**, **Large Language Models (LLMs)**, and prompt engineering.
+- Explored framework pipelines using **LangChain**, **Hugging Face**, and **Vector Databases**.
+- Built AI workflows and explored Retrieval-Augmented Generation (RAG) architectures.
+
+---
+
+## 🛠️ Technical Skills & Tools
+
+### 🐍 Languages & Core Tools
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+### 📊 Data Science & Machine Learning
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
+### 🤖 Generative AI & LLMs
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+![Vector DB](https://img.shields.io/badge/Vector%20DBs-4A154B?style=for-the-badge&logo=database&logoColor=white)
+
+### 📈 Business Intelligence & Development Tools
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+
+---
+
+## 🚀 Featured Projects
+
+### ⚙️ [Motor Fault Detection using Machine Learning](https://github.com/Sampriktade2005)
+> *Predictive Maintenance & Fault Detection System for Industrial Motors*
+- Conducted data preprocessing, feature engineering, and exploratory data analysis on motor operating parameters (temperature, speed, acceleration/vibration).
+- Implemented ML classification models including **Logistic Regression** and **K-Nearest Neighbors (KNN)** to accurately predict motor faults.
+- Evaluated model accuracy, Precision, Recall, and Confusion Matrices to ensure reliable industrial anomaly detection.
+- \`Python\` · \`Scikit-learn\` · \`Pandas\` · \`Matplotlib\` · \`Seaborn\`
+
+---
+
+### 📊 [E-Commerce Sales Analytics Dashboard](https://github.com/Sampriktade2005)
+> *Business Intelligence & Data Analytics Dashboard for Sales Performance*
+- Cleaned, structured, and analyzed multi-category e-commerce transaction data to evaluate revenue trends and customer buying behavior.
+- Built key performance indicators (KPIs) and interactive charts for monthly sales growth, product profitability, and regional distribution.
+- Extracted actionable insights to guide inventory planning, customer retention, and targeted marketing strategies.
+- \`Python\` · \`Pandas\` · \`Power BI\` · \`Excel\` · \`Data Visualization\`
+
+---
+
+### 🌐 [Web Application Portfolio](https://github.com/Sampriktade2005/PROJECT)
+> *Personal Web & Project Showcase Repository*
+- Modular front-end web project created to showcase analytical projects and web applications.
+- Features clean HTML5 structure, responsive layout styling, and intuitive site navigation.
+- \`HTML5\` · \`CSS3\` · \`JavaScript\` · \`GitHub Pages\`
+
+---
+
+## 📚 Currently Learning & Exploring
+
+- 🤖 **Generative AI & LLMs**: RAG architectures, prompt engineering, and agentic workflows using **LangChain** & **Hugging Face**.
+- 📦 **Vector Databases**: Semantic indexing, vector search, and embedding stores (ChromaDB, Pinecone).
+- 📈 **Advanced Data Analytics**: Creating executive dashboards, storytelling with data, and automated pipeline workflows.
+
+---
+
+## 📊 GitHub Statistics & Languages
+
+<div align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Sampriktade2005&show_icons=true&theme=midnight-purpur&include_all_commits=true&count_private=true&hide_border=true" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sampriktade2005&layout=compact&theme=midnight-purpur&hide_border=true&langs_count=6" />
+
+<br/><br/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Sampriktade2005&theme=midnight-purpur&hide_border=true" />
+
+</div>
+
+---
+
+## 🤝 Connect & Collaborate
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/samprikta-de)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sampriktade2005)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:samprikta.de@example.com)
+
+<br/>
+
+⭐️ *Thank you for visiting my GitHub Profile! Feel free to explore my repositories and reach out for collaborations.*
+
+</div>`;
+
+        document.getElementById('markdownCode').innerText = rawMarkdown;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function copyMarkdown() {
+            navigator.clipboard.writeText(rawMarkdown).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 3000);
+            });
+        }
+    </script>
+</body>
+</html>
