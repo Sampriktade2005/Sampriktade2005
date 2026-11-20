@@ -147,6 +147,36 @@
 
 ---
 
+ ### 🤖 **ASTID: AI Shield for Transaction Integrity & Defense**
+Final Year B.Tech Capstone · Team of 5
+Real-time, pre-authorization fraud detection platform for digital payments, with an investigator workbench, built on a 6.36M-row data warehouse.
+
+Built a dual-engine ML pipeline: calibrated XGBoost for known fraud and a PyTorch autoencoder for zero-day anomalies
+Designed 11 causal pre-authorization features to avoid data leakage, with the same extractor used in training and live scoring
+Added a rules engine (NPCI ₹1,00,000 cap, mule blacklist) and Haversine impossible-travel detection
+Served scoring through FastAPI at 10.27 ms P95 latency, with DuckDB and Parquet queries over 6.36M rows in under 30 ms
+Generated SAR narratives with Groq LLMs and built a live Next.js dashboard with WebSocket streaming
+
+Python · FastAPI · XGBoost · PyTorch · DuckDB · Supabase · Next.js · Groq
+
+
+----
+
+### 🤖 **Noetrix: Hybrid ATS Scorer & Ranker**
+Capstone Project
+ATS simulation app with separate candidate and recruiter views, powered by one deterministic scoring engine.
+
+Built a 6-metric scoring engine covering keyword match, semantic fit, experience, education, impact and format health
+Used sentence-transformers for semantic matching, with an automatic TF-IDF fallback to stay within Render’s 512 MB memory limit
+Added an AI resume editor with one-click XYZ bullet rewriting, diff preview, live re-scoring and PDF audit export
+Built a recruiter workflow with bulk screening of up to 50 CVs, a soft-knockout cap, 6-tier tie-breaking and CSV shortlist export
+Deployed a stateless FastAPI backend on Render and a Next.js 15 frontend on Vercel
+
+Python · FastAPI · scikit-learn · Sentence-Transformers · Next.js · Tailwind CSS
+
+Two notes: the ASTID bullets are written for a general team member, so tell me your exact role and I can sharpen them (for example, the backend scoring and rules engine). I also used the live site as the Noetrix link, so swap in the GitHub repo link if you prefer.
+---
+
 ## 📚 Currently Learning & Exploring
 
 - 🤖 **Generative AI & LLMs**: RAG architectures, prompt engineering, and agentic workflows using **LangChain** & **Hugging Face**.
