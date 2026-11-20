@@ -174,7 +174,6 @@ Deployed a stateless FastAPI backend on Render and a Next.js 15 frontend on Verc
 
 Python · FastAPI · scikit-learn · Sentence-Transformers · Next.js · Tailwind CSS
 
-Two notes: the ASTID bullets are written for a general team member, so tell me your exact role and I can sharpen them (for example, the backend scoring and rules engine). I also used the live site as the Noetrix link, so swap in the GitHub repo link if you prefer.
 ---
 
 ## 📚 Currently Learning & Exploring
